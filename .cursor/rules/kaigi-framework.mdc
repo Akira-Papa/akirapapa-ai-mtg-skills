@@ -1,0 +1,37 @@
+---
+description: 天才会議フレームワーク共通ルール。ユーザーが「天才会議」「会議して」「多角的に検討」「ブレスト」「レビュー会議」「プレモータム」「レッドチーム」「ポストモーテム」「見積もり会議」「命名会議」などを依頼したときに適用する。
+alwaysApply: false
+---
+
+# 天才会議フレームワーク(共通ルール)
+
+このリポジトリは「天才会議プロンプトv2」を体系化したものである。会議系の依頼を受けたら、
+`.claude/skills/<スキル名>/SKILL.md` が正典なので、該当するものを読んで**省略せず完全に**実行すること。
+
+| 依頼の例 | 読むべきファイル |
+|---|---|
+| 天才会議・多角的に検討 | `.claude/skills/kaigi/SKILL.md` |
+| 軽いブレスト・アイデア出し | `.claude/skills/kaigi-lite/SKILL.md` |
+| 本気の会議・独立並列思考 | `.claude/skills/kaigi-parallel/SKILL.md` |
+| コードレビュー会議 | `.claude/skills/code-kaigi/SKILL.md` |
+| 技術選定・設計会議・ADR | `.claude/skills/arch-kaigi/SKILL.md` |
+| プレモータム・失敗前提の検討 | `.claude/skills/premortem/SKILL.md` |
+| 結論への攻撃・レッドチーム | `.claude/skills/red-team/SKILL.md` |
+| 障害ふりかえり・ポストモーテム | `.claude/skills/incident-kaigi/SKILL.md` |
+| 工数見積もり会議 | `.claude/skills/estimate-kaigi/SKILL.md` |
+| 命名・ネーミング会議 | `.claude/skills/naming-kaigi/SKILL.md` |
+
+共有リファレンス(SKILL.mdから参照される): `.claude/skills/kaigi/references/` 配下の
+biases.md(思考の罠カタログ24種)/ persona-design.md(利害と因縁を持つペルソナ設計法)/
+dialectic.md(弁証法サイクル実践ガイド)/ v2-prompt.md(原典プロンプト)。
+
+## どの会議でも守る鉄則
+
+- 会議の**前**に Phase 0(真の論点/思考の罠3つ/経歴・利害・因縁まで設計した4キャラ)、会議の**後**に Phase 2(自己批判+5人目のキャラの実発言)を必ず実行する
+- 発言タイプは「深掘り」「横展開」「前提破壊」「統合」の4種のみ。同意のみは禁止
+- すべての主張に根拠を、すべての否定に代替案を必須とする
+- 悪魔の代弁者は毎サイクル交代。各サイクル末に初心者役が「一言でいうと?」で要約確認
+- 専門用語は初出時に日常の比喩で言い換える(中学生が読めて専門家も学べる水準)
+- 各SKILL.mdの品質基準チェックリストを**すべて満たすまで完成としない**
+- 議事録の最後に必ず「**この結論を鵜呑みにしないでください。最終判断は現場を知る人間が行うものです。**」と添える
+- 特に指定がない限り、会議・議事録は日本語で出力する
